@@ -5,16 +5,17 @@
 //
 //  Created by Ignacio Romero Zurbuchen on 6/20/14.
 //  Copyright (c) 2014 DZN Labs. All rights reserved.
-//  Licence: MIT-Licence
-//
-
-#import <UIKit/UIKit.h>
+UIKit/UIKit.h>
 
 @protocol DZNEmptyDataSetSource;
 @protocol DZNEmptyDataSetDelegate;
 
-/**
- A drop-in UITableView/UICollectionView superclass category for showing empty datasets whenever the view has no content to display.
+======>>>>>>>+HEAD
+EmptyD>>>>>>>+HEAD
+EmptyDat#define DZNEmptyDataSetDeprecated(instead) DEPRECATED_MSG_ATTRIBUTE(" Use " # instead " instead")
+
+>>>>>>>-4884835
+empty datasets whenever the view has no content to display.
  @discussion It will work automatically, by just conforming to DZNEmptyDataSetSource, and returning the data you want to show.
  */
 @interface UIScrollView (EmptyDataSet)
@@ -140,11 +141,12 @@
  @param scrollView A scrollView subclass object informing the delegate.
  @return The offset for vertical and horizontal alignment.
  */
-- (CGPoint)offsetForEmptyDataSet:(UIScrollView *)scrollView DEPRECATED_MSG_ATTRIBUTE("Use -verticalOffsetForEmptyDataSet:");
-- (CGFloat)verticalOffsetForEmptyDataSet:(UIScrollView *)scrollView;
-
-/**
- Asks the data source for a vertical space between elements. Default is 11 pts.
+<<<<<<<+HEAD
+- (CGPoint)offsetForEmpty- (CGPoint)offsetForEmptyDataSet:(UISc- (CGPoint)offsetForEmptyDataSet:(UIScrollView *)scrollView DEPRECATED_MSG_ATTRIBUTE("Use -verticalOffsetForEmptyDataSet:");
+>>>>>>>+HEAD
+et:(UISc- (CGPoint)offsetForEmptyDataSet:(UIScrollView *)scrollView DZNEmptyDataSetDeprecated(-verticalOffsetForEmptyDataSet:);
+>>>>>>>-4884835
+ce between elements. Default is 11 pts.
  
  @param scrollView A scrollView subclass object informing the delegate.
  @return The space height between elements.
@@ -172,9 +174,8 @@
 - (BOOL)emptyDataSetShouldFadeIn:(UIScrollView *)scrollView;
 
 /**
- Asks the delegate to know if the empty dataset should be rendered and displayed. Default is YES.
- 
- @param scrollView A scrollView subclass object informing the delegate.
+<<<<<<<+HEAD
+rming the delegate.
  @return YES if the empty dataset should show.
  */
 - (BOOL)emptyDataSetShouldDisplay:(UIScrollView *)scrollView;
@@ -210,21 +211,15 @@
  
  @param scrollView A scrollView subclass informing the delegate.
  */
-- (void)emptyDataSetDidTapView:(UIScrollView *)scrollView DEPRECATED_MSG_ATTRIBUTE("Use emptyDataSet:didTapView:");
-
-/**
- Tells the delegate that the action button was tapped.
- 
- @param scrollView A scrollView subclass informing the delegate.
- */
-- (void)emptyDataSetDidTapButton:(UIScrollView *)scrollView DEPRECATED_MSG_ATTRIBUTE("Use emptyDataSet:didTapButton:");
-
-/**
- Tells the delegate that the empty dataset view was tapped.
- Use this method either to resignFirstResponder of a textfield or searchBar.
- 
- @param scrollView A scrollView subclass informing the delegate.
- @param view the view tapped by the user
+- (void)emptyDataSetDidTapView:(UIScrollView *)scrollView DEPRE- (void)emptyDataSetDidTapView:(UIScrollView *)scrollView DEPRECATED_MSG_ATT- (void)emptyDataSetDidTapView:(UIScrollView *)scrollView DEPRECATED_MSG_ATTRIBUTE("Use emptyDataSet:didTapView:");
+>>>>>>>+HEAD
+taSetDep- (void)emptyDataSetDidTapView:(UIScrollView *)scrollView DZNEmptyDataSetDeprecated(-emptyDataSet:didTapView:);
+>>>>>>>-4884835
+ *)scrollView DEPRECATED_MSG_ATTRIBU- (void)emptyDataSetDidTapButton:(UIScrollView *)scrollView DEPRECATED_MSG_ATTRIBUTE("Use empty- (void)emptyDataSetDidTapButton:(UIScrollView *)scrollView DEPRECATED_MSG_ATTRIBUTE("Use emptyDataSet:didTapButton:");
+>>>>>>>+HEAD
+emptyDat- (void)emptyDataSetDidTapButton:(UIScrollView *)scrollView DZNEmptyDataSetDeprecated(-emptyDataSet:didTapButton:);
+>>>>>>>-4884835
+ew tapped by the user
  */
 - (void)emptyDataSet:(UIScrollView *)scrollView didTapView:(UIView *)view;
 
@@ -265,3 +260,4 @@
 - (void)emptyDataSetDidDisappear:(UIScrollView *)scrollView;
 
 @end
+<<<<<<<+HEAD
